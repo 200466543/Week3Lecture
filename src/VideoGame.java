@@ -10,7 +10,7 @@ public class VideoGame {
 
     public VideoGame(String name, ArrayList<String> genre, String ageRating, String console) {
         setName(name);
-        setGenre(new ArrayList<>());
+        setGenre(genre);
         setAgeRating(ageRating);
         setConsole(console);
     }
@@ -46,6 +46,10 @@ public class VideoGame {
         return genres;
     }
 
+    /**
+     * This will validate that the argument contains genres from a recognised list of valid genres
+     * @param genres
+     */
     public void setGenre(ArrayList<String> genres) {
         ArrayList<String> validGenres = getAllGenres();
         for (String genre : genres){
