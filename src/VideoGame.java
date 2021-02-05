@@ -30,8 +30,31 @@ public class VideoGame {
         return genre;
     }
 
-    public void setGenre(ArrayList<String> genre) {
-        this.genre = genre;
+    /**
+     * This method will return a list of all known genres
+     * @return
+     */
+    public static ArrayList<String> getAllGenres(){
+        ArrayList<String> genres = new ArrayList<>();
+        genres.add("Horror");
+        genres.add("FPS");
+        genres.add("Puzzle");
+        genres.add("Sports");
+        genres.add("Adventure");
+        genres.add("Point and Click");
+        genres.add("4x Strategy");
+        return genres;
+    }
+
+    public void setGenre(ArrayList<String> genres) {
+        ArrayList<String> validGenres = getAllGenres();
+        for (String genre : genres){
+            if (!validGenres.contains(genre))
+                throw new IllegalArgumentException(genre + " is not valid. Valid options are: "
+                +validGenres);
+        }
+        this.genre = genres;
+
     }
 
     public String getAgeRating() {
