@@ -48,6 +48,8 @@ public class VideoGame {
 
     /**
      * This will validate that the argument contains genres from a recognised list of valid genres
+     * It takes the given list from the constructor and goes through the validGenres each time for every
+     * item in the constructor's new list
      * @param genres
      */
     public void setGenre(ArrayList<String> genres) {
